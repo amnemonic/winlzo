@@ -3,10 +3,11 @@ import platform
 import os.path
 
 
+
 if platform.architecture()[0]=='32bit':
-    lzo1_dll = ctypes.cdll.LoadLibrary(os.path.join(os.path.dirname(__file__), r"x86\cyglzo2-2.dll"))
+    lzo1_dll = ctypes.cdll.LoadLibrary(os.path.join(os.path.dirname(__file__), r"lzo2.dll"))
 else:
-    lzo1_dll = ctypes.cdll.LoadLibrary(os.path.join(os.path.dirname(__file__), r"x64\cyglzo2-2.dll"))
+    lzo1_dll = ctypes.cdll.LoadLibrary(os.path.join(os.path.dirname(__file__), r"lzo2_64.dll"))
 
 error_to_text = {
      0:'LZO_E_OK',
